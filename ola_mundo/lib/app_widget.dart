@@ -12,7 +12,9 @@ class AppWidget extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.red,
             useMaterial3: false,
-            brightness: Brightness.dark,
+            brightness: appController.instance.isDarkTheme
+                ? Brightness.dark
+                : Brightness.light,
           ),
           home: HomePage(),
         );
