@@ -16,6 +16,38 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: Image.network(
+                  'https://media.licdn.com/dms/image/v2/D4D03AQEqmTpw91Ph_Q/profile-displayphoto-shrink_200_200/B4DZY5cB6QGwAY-/0/1744720372895?e=1769040000&v=beta&t=yosclHxF8rrZw9dOAkaE_93ZDPk_y2aQHHbx7DYvWGM',
+                ),
+              ),
+              accountName: Text('Henrique Salazar'),
+              accountEmail: Text('email@email.com'),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Início'),
+              subtitle: Text('tela inicial'),
+              onTap: () {
+                print('Home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Logout'),
+              subtitle: Text('Finalizar sessão'),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(title: Text('HomePage'), actions: [CustomSwitch()]),
 
       body: Container(
@@ -55,7 +87,6 @@ class CustomSwitch extends StatelessWidget {
     return Switch(
       value: appController.instance.isDarkTheme,
       onChanged: (value) {
-        counter++;
         appController.instance.changeTheme();
       },
     );
