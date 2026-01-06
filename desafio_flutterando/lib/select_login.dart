@@ -53,7 +53,7 @@ class SelectLoginTinder extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  print('Logou ');
+                  print('Logou');
                   Navigator.of(context).pushNamed('/login');
                 },
                 style: ElevatedButton.styleFrom(
