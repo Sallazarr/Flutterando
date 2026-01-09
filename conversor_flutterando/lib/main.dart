@@ -8,6 +8,9 @@ main() {
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: ThemeData.dark(), home: HomeView());
+    return MaterialApp(
+      theme: ThemeData.dark(useMaterial3: false),
+      home: HomeView(),
+    );
   }
 }
