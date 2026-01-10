@@ -38,6 +38,18 @@ class _HomeViewState extends State<HomeView> {
               children: [
                 Image.asset('assets/logo.png', width: 150, height: 150),
                 SizedBox(height: 50),
+                Text(
+                  'Conversor de moedas',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.amber,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.white,
+                    decorationThickness: 1.5,
+                  ),
+                ),
+                SizedBox(height: 30),
                 CurrencyBox(
                   selecteditem: homeController.fromCurrency,
                   controller: fromText,
